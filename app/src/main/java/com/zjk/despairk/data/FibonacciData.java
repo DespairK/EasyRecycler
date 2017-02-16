@@ -1,6 +1,7 @@
 package com.zjk.despairk.data;
 
 import java.math.BigInteger;
+import java.text.DecimalFormat;
 
 /**
  * com.zjk.despairk.data
@@ -13,14 +14,26 @@ import java.math.BigInteger;
 public class FibonacciData {
     BigInteger[][] f = new BigInteger[][]{{BigInteger.valueOf(0), BigInteger.valueOf(1)}, {BigInteger.valueOf(1), BigInteger.valueOf(1)}};
 
-    public BigInteger getNthNumber1(int n) {
+    public String getNthNumber1(int n) {
         if (n == 0)
-            return BigInteger.valueOf(0);
+            return "0";
         if (n == 1)
-            return BigInteger.valueOf(1);
+            return "1";
         f = pow(n - 1, f);
 
-        return f[1][1];
+        return getData(f[1][1]);
+    }
+
+    public String getData(BigInteger bigInteger) {
+        String style = "0.00E000";
+        DecimalFormat df = new DecimalFormat();
+        df.applyPattern(style);
+        Double max = Math.pow(10, 10);
+        if (bigInteger.compareTo(BigInteger.valueOf(max.intValue())) < 0) {
+            return bigInteger.toString();
+        } else {
+            return df.format(bigInteger);
+        }
     }
 
     private BigInteger[][] pow(int n, BigInteger[][] f) {

@@ -1,14 +1,16 @@
 package com.zjk.despairk.viewholder;
 
 import android.content.Context;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder;
-import com.zjk.despairk.adapter.GridAdapter;
 import com.zjk.despairk.bean.ItemB;
 import com.zjk.despairk.activity.R;
+import com.zjk.despairk.bean.MessageData;
+
+import org.greenrobot.eventbus.EventBus;
 
 /**
  * com.zjk.despairk.viewholder
@@ -19,23 +21,25 @@ import com.zjk.despairk.activity.R;
  *         功能:
  */
 public class ItemBViewHolder extends EasyViewHolder<ItemB> {
-    private RecyclerView recyclerView;
+    private TextView textView;
     private Context context;
     public ItemBViewHolder(Context context, ViewGroup parent) {
         super(context, parent, R.layout.item_b);
         this.context = context;
-        recyclerView = (RecyclerView) itemView.findViewById(R.id.rv_item_b_recyclerview);
+        textView = (TextView) itemView.findViewById(R.id.tv_item_b);
     }
 
     @Override
     public void bindTo(ItemB value) {
         if (value != null) {
-            //改下面这个参数，要几列有几列
-            GridLayoutManager layoutManager = new GridLayoutManager(this.context, 2);
-            GridAdapter gridAdapter = new GridAdapter(context);
-            gridAdapter.setListData(value.getListData());
-            recyclerView.setLayoutManager(layoutManager);
-            recyclerView.setAdapter(gridAdapter);
+            itemView.setTag(value);
+            textView.setText(value.getListData());
+            itemView.findViewById(R.id.ll).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    EventBus.getDefault().post(new MessageData());
+                }
+            });
         }
     }
 }

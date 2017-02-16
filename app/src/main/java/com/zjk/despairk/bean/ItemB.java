@@ -11,13 +11,13 @@ import java.util.List;
  *         功能:
  */
 public class ItemB {
-    private List<String> listData;
+    private String listData;
 
-    public List<String> getListData() {
+    public String getListData() {
         return listData;
     }
 
-    public ItemB(List<String> listData) {
+    public ItemB(String listData) {
 
         this.listData = listData;
     }
