@@ -1,5 +1,7 @@
 package com.zjk.despairk.bean;
 
+import java.math.BigInteger;
+
 /**
  * com.zjk.despairk.bean
  * DespairK
@@ -10,6 +12,16 @@ package com.zjk.despairk.bean;
  */
 public class Title {
     private String title;
+    private BigInteger bigInteger;
+
+    public BigInteger getBigInteger() {
+        return bigInteger;
+    }
+
+    public Title(BigInteger bigInteger) {
+
+        this.bigInteger = bigInteger;
+    }
 
     public String getTitle() {
         return title;

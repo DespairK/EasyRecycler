@@ -8,6 +8,9 @@ import com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder;
 import com.zjk.despairk.bean.Title;
 import com.zjk.despairk.activity.R;
 
+import java.math.BigInteger;
+import java.text.DecimalFormat;
+
 /**
  * com.zjk.despairk.viewholder
  * DespairK
@@ -30,7 +33,15 @@ public class TitleViewHolder extends EasyViewHolder<Title> {
     public void bindTo(Title value) {
         if (value != null) {
             itemView.setTag(value);
-            tvTitle.setText(value.getTitle());
+            String style = "0.00E000";
+            DecimalFormat df = new DecimalFormat();
+            df.applyPattern(style);
+            Double max = Math.pow(10, 10);
+            if (value.getBigInteger().compareTo(BigInteger.valueOf(max.intValue())) < 0) {
+                tvTitle.setText(value.getBigInteger().toString());
+            } else {
+                tvTitle.setText(df.format(value.getBigInteger()));
+            }
         }
     }
 }
