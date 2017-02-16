@@ -1,4 +1,4 @@
-package com.zjk.despairk.test;
+package com.zjk.despairk.activity;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

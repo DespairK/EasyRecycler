@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder;
 import com.zjk.despairk.adapter.GridAdapter;
 import com.zjk.despairk.bean.ItemB;
-import com.zjk.despairk.test.R;
+import com.zjk.despairk.activity.R;
 
 /**
  * com.zjk.despairk.viewholder

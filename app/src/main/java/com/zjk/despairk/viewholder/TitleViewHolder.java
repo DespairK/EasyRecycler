@@ -6,10 +6,7 @@ import android.widget.TextView;
 
 import com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder;
 import com.zjk.despairk.bean.Title;
-import com.zjk.despairk.test.R;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import com.zjk.despairk.activity.R;
 
 /**
  * com.zjk.despairk.viewholder

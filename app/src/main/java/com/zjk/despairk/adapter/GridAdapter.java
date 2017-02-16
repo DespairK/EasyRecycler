@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.zjk.despairk.test.R;
+import com.zjk.despairk.activity.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.zjk.despairk.test;
+package com.zjk.despairk.activity;
 
 import org.junit.Test;
 
